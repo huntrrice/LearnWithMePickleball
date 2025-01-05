@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Pickle</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FullCalendar CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google Sign-In -->
+    <meta name="google-signin-client_id" content="647888274471-qi6tukmnldfhb70iqt42arvk054ptu7s.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+    <section class="hero-section">
+        <div class="logo">
+            <img src="images/zen-pickle-logo.png" alt="Zen Pickle Logo" class="paddle-logo">
+        </div>
+        <div class="title">
+            Zen Pickle
+            <span class="subtitle">mindful pickleball</span>
+        </div>
+        <div class="scroll-indicator">scroll down</div>
+    </section>
+
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-wrapper">
+                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                <div id="user-info" style="display: none;">
+                    <img id="user-image" alt="Profile Image">
+                    <p id="user-name"></p>
+                    <button onclick="signOut()" class="sign-out-btn">Sign Out</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-blocks">
+                <h2>The Art of Mindful Pickleball</h2>
+                <p>Discover how ancient Eastern principles can transform your pickleball game. By incorporating mindfulness, balance, and fluid movement, you'll develop a deeper connection between body and mind on the court.</p>
+                
+                <h3>Core Principles</h3>
+                <p>Our unique approach combines traditional Tai Chi wisdom with modern pickleball techniques, helping players of all levels achieve greater control, power, and mental clarity.</p>
+                
+                <h3>Benefits</h3>
+                <p>Through our mindful approach to pickleball, you'll experience:</p>
+                <ul>
+                    <li>Enhanced balance and stability</li>
+                    <li>Improved focus and mental clarity</li>
+                    <li>Better body awareness and control</li>
+                    <li>Increased power with less effort</li>
+                    <li>Reduced risk of injury</li>
+                </ul>
+                
+                <h3>Our Approach</h3>
+                <p>By blending Eastern movement principles with America's fastest-growing sport, we've created a unique approach that elevates your game while promoting mindfulness and well-being.</p>
+                
+                <h3>Getting Started</h3>
+                <p>Whether you're new to pickleball or an experienced player, our methodology adapts to your skill level. We focus on integrating mindful movement naturally into your game.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section">
+        <div class="container">
+            <h2>Book a Session</h2>
+            <div id="booking-calendar"></div>
+            <div id="booking-form" style="display: none;">
+                <h3>Book Your Session</h3>
+                <form id="session-form">
+                    <div class="form-group">
+                        <label for="session-time">Selected Time:</label>
+                        <input type="text" id="session-time" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="session-type">Session Type:</label>
+                        <select id="session-type" required>
+                            <option value="private">Private Lesson (1 hour)</option>
+                            <option value="group">Group Session (1.5 hours)</option>
+                            <option value="workshop">Workshop (2 hours)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="book-btn">Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Location</h4>
+                    <p>123 Pickle Court Lane<br>San Francisco, CA 94110</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: hello@zenpickle.com<br>Phone: (555) 123-4567</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p>Monday - Friday: 8am - 7pm<br>Saturday: 9am - 5pm</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zen Pickle. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@5.11.3/main.min.js'></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
