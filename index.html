@@ -3,120 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zen Pickle</title>
+    <title>Learn With Me Pickleball</title>
     <!-- Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- FullCalendar CSS -->
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Google Sign-In -->
-    <meta name="google-signin-client_id" content="647888274471-qi6tukmnldfhb70iqt42arvk054ptu7s.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
     <section class="hero-section">
-        <div class="logo">
-            <img src="images/zen-pickle-logo.png" alt="Zen Pickle Logo" class="paddle-logo">
-        </div>
-        <div class="title">
-            Zen Pickle
-            <span class="subtitle">mindful pickleball</span>
+        <div class="profile">
+            <div class="profile-photo">
+                <img src="images/profile.jpg" alt="Daniel Skrade" class="profile-img">
+            </div>
+            <div class="title">
+                LEARN WITH ME
+                <span class="subtitle">PICKLEBALL</span>
+            </div>
         </div>
         <div class="scroll-indicator">scroll down</div>
     </section>
 
-    <section class="auth-section">
+    <section class="about-section">
         <div class="container">
-            <div class="auth-wrapper">
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-                <div id="user-info" style="display: none;">
-                    <img id="user-image" alt="Profile Image">
-                    <p id="user-name"></p>
-                    <button onclick="signOut()" class="sign-out-btn">Sign Out</button>
+            <div class="about-content">
+                <h2>About Me</h2>
+                <div class="about-text">
+                    <p>Hello! My name is Daniel Skrade and I am a pickleball fanatic. When teaching pickleball clinics my opening line is commonly "Playing pickleball is my favorite thing in the world, and teaching pickleball is my second." I have been around racket sports my whole life, starting tennis as early as I could hold a racket, had a ping pong table in the basement growing up, and started pickleball in 3rd Grade (2012).</p>
+                    
+                    <p>I especially love pickleball for two reasons: The variability and strategy involved with every shot, and because there is constantly something new to learn. I am very thankful to be living in this current pickleball era where there aren't set shots, strategies, techniques, or paddles needed to win. While I will learn a lot throughout the process of making videos, the purpose of this channel is to help you learn. I sincerely hope you enjoy the content.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="content-section">
+    <section class="social-links">
         <div class="container">
-            <div class="content-blocks">
-                <h2>The Art of Mindful Pickleball</h2>
-                <p>Discover how ancient Eastern principles can transform your pickleball game. By incorporating mindfulness, balance, and fluid movement, you'll develop a deeper connection between body and mind on the court.</p>
-                
-                <h3>Core Principles</h3>
-                <p>Our unique approach combines traditional Tai Chi wisdom with modern pickleball techniques, helping players of all levels achieve greater control, power, and mental clarity.</p>
-                
-                <h3>Benefits</h3>
-                <p>Through our mindful approach to pickleball, you'll experience:</p>
-                <ul>
-                    <li>Enhanced balance and stability</li>
-                    <li>Improved focus and mental clarity</li>
-                    <li>Better body awareness and control</li>
-                    <li>Increased power with less effort</li>
-                    <li>Reduced risk of injury</li>
-                </ul>
-                
-                <h3>Our Approach</h3>
-                <p>By blending Eastern movement principles with America's fastest-growing sport, we've created a unique approach that elevates your game while promoting mindfulness and well-being.</p>
-                
-                <h3>Getting Started</h3>
-                <p>Whether you're new to pickleball or an experienced player, our methodology adapts to your skill level. We focus on integrating mindful movement naturally into your game.</p>
+            <div class="links-grid">
+                <a href="https://www.youtube.com/@LearnWithMePickleball" class="social-link youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                </a>
+                <a href="https://www.instagram.com/danielskrade_pb" class="social-link instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://venmo.com/danielskrade" class="social-link venmo">
+                    <img src="images/venmo.png" alt="Venmo" class="venmo-icon">
+                    <span>Venmo</span>
+                </a>
             </div>
         </div>
     </section>
 
-    <section class="booking-section">
+    <section class="ambassador-section">
         <div class="container">
-            <h2>Book a Session</h2>
-            <div id="booking-calendar"></div>
-            <div id="booking-form" style="display: none;">
-                <h3>Book Your Session</h3>
-                <form id="session-form">
-                    <div class="form-group">
-                        <label for="session-time">Selected Time:</label>
-                        <input type="text" id="session-time" readonly>
-                    </div>
-                    <div class="form-group">
-                        <label for="session-type">Session Type:</label>
-                        <select id="session-type" required>
-                            <option value="private">Private Lesson (1 hour)</option>
-                            <option value="group">Group Session (1.5 hours)</option>
-                            <option value="workshop">Workshop (2 hours)</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="book-btn">Confirm Booking</button>
-                </form>
+            <div class="ambassador-content">
+                <div class="ambassador-logo">
+                    <img src="images/ronbus.png" alt="Ronbus" class="ronbus-logo">
+                </div>
+                <h2>Ronbus Ambassador</h2>
+                <p>Use code <span class="promo-code" onclick="copyCode()" id="promoCode">RC4URQZ5</span> for a special discount at <a href="https://ronbus.com" target="_blank" class="ronbus-link">ronbus.com</a></p>
+                <span class="copy-message" id="copyMessage">Click the code to copy</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <h2>Featured Videos</h2>
+            <div class="video-grid">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/xxfuD5tuB38"
+                        title="Featured Pickleball Video 1"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/FWx4JducNLU"
+                        title="Featured Pickleball Video 2"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/JCqP76hThcU"
+                        title="Featured Pickleball Video 3"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/dx2xnn5vCtA"
+                        title="Featured Pickleball Video 4"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Location</h4>
-                    <p>123 Pickle Court Lane<br>San Francisco, CA 94110</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: hello@zenpickle.com<br>Phone: (555) 123-4567</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Hours</h4>
-                    <p>Monday - Friday: 8am - 7pm<br>Saturday: 9am - 5pm</p>
-                </div>
-            </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Zen Pickle. All rights reserved.</p>
+                <p>&copy; 2024 Learn With Me Pickleball. All rights reserved.</p>
             </div>
         </div>
     </footer>
-    
-    <!-- Scripts -->
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@5.11.3/main.min.js'></script>
+
     <script src="js/main.js"></script>
 </body>
 </html> 

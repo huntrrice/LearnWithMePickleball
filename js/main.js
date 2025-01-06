@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             clientId: '647888274471-qi6tukmnldfhb70iqt42arvk054ptu7s.apps.googleusercontent.com',
             discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
             scope: 'https://www.googleapis.com/auth/calendar.events',
-            redirect_uri: 'https://<your-username>.github.io/<repo-name>'
+            redirect_uri: 'https://joshualevitas.github.io/zen-pickle/'
         }).then(function() {
             // Initialize calendar after Google API is loaded
             initializeCalendar();
@@ -220,3 +220,58 @@ function showBookingForm(info) {
 
 // Handle booking form submission
 document.getElementById('session-form').addEventListener('submit', handleBookingSubmission); 
+
+// YouTube channel latest videos
+const CHANNEL_ID = 'LearnWithMePickleball';
+const API_KEY = 'YOUR_YOUTUBE_API_KEY'; // You'll need to get this from Google Cloud Console
+
+async function fetchLatestVideos() {
+    try {
+        const response = await fetch(
+            `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=3`
+        );
+        const data = await response.json();
+        
+        const videoGrid = document.querySelector('.video-grid');
+        videoGrid.innerHTML = data.items.map(video => `
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/${video.id.videoId}"
+                    title="${video.snippet.title}"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error('Error fetching videos:', error);
+    }
+}
+
+// Call this when the page loads
+document.addEventListener('DOMContentLoaded', fetchLatestVideos); 
+
+function copyCode() {
+    const promoCode = document.getElementById('promoCode').innerText;
+    
+    // Create a temporary textarea element to copy from
+    const textarea = document.createElement('textarea');
+    textarea.value = promoCode;
+    document.body.appendChild(textarea);
+    
+    // Select and copy the text
+    textarea.select();
+    document.execCommand('copy');
+    
+    // Clean up
+    document.body.removeChild(textarea);
+    
+    // Update message
+    const message = document.getElementById('copyMessage');
+    message.innerText = 'Code copied!';
+    
+    setTimeout(() => {
+        message.innerText = 'Click the code to copy';
+    }, 2000);
+} 
