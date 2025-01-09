@@ -578,4 +578,132 @@ html {
     background: linear-gradient(45deg, #008CFF 0%, #0074D4 100%);
     color: white;
     border: none;
+}
+
+/* Booking Info Section Styles */
+.booking-info {
+    padding: 80px 0;
+    background: white;
+}
+
+.booking-info h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #111;
+    position: relative;
+    padding-bottom: 1rem;
+    background: linear-gradient(45deg, #111 0%, #444 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.booking-info h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #111111 0%, #2a2a2a 100%);
+    border-radius: 2px;
+}
+
+.booking-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.booking-intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 3rem;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.contact-item {
+    padding: 2rem;
+    border-radius: 12px;
+    background: #f8f8f8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.contact-item i {
+    font-size: 2rem;
+    color: #111;
+    margin-bottom: 1rem;
+}
+
+.contact-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+.contact-item a {
+    color: #444;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #111;
+}
+
+.lesson-types {
+    margin-top: 3rem;
+    padding: 2rem;
+    border-radius: 12px;
+    background: #f8f8f8;
+}
+
+.lesson-types h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: #111;
+}
+
+.lesson-types ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lesson-types li {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .booking-info h2 {
+        font-size: 2.4rem;
+    }
+    
+    .contact-methods {
+        grid-template-columns: 1fr;
+    }
+    
+    .booking-intro {
+        font-size: 1.1rem;
+    }
 } 
