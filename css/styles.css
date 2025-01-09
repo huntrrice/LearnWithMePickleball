@@ -707,3 +707,17 @@ html {
         font-size: 1.1rem;
     }
 } 
+
+/* Update mobile styles for social links */
+@media (max-width: 768px) {
+    .links-grid {
+        padding: 0 20px;  /* Add padding to the grid container */
+    }
+    
+    .social-link {
+        padding: 16px;  /* Reduce padding of buttons */
+        font-size: 1.1rem;
+        max-width: 100%;
+        margin: 0 15px;  /* Add margin to keep buttons away from edges */
+    }
+} 
