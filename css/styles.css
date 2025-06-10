@@ -23,7 +23,6 @@ body {
     font-size: 4rem;
     font-weight: 500;
     letter-spacing: 4px;
-    text-transform: uppercase;
     margin-top: 2rem;
     line-height: 1.2;
 }
@@ -81,7 +80,7 @@ body {
 /* About section styles */
 .about-section {
     padding: 60px 0;
-    background: white;
+    background: transparent;
     position: relative;
 }
 
@@ -140,7 +139,7 @@ body {
 /* Social links styles */
 .social-links {
     padding: 60px 0;
-    background: #f8f8f8;
+    background: transparent;
 }
 
 .links-grid {
@@ -268,8 +267,8 @@ body {
 
 /* Video section styles */
 .video-section {
-    padding: 80px 0;
-    background: #f8f8f8;
+    padding: 60px 0;
+    background: transparent;
     position: relative;
 }
 
@@ -502,12 +501,12 @@ html {
 
 /* Add subtle gradients to sections */
 .about-section {
-    background: white;
+    background: transparent;
     position: relative;
 }
 
 .video-section {
-    background: #f8f8f8;
+    background: transparent;
     position: relative;
 }
 
@@ -582,8 +581,8 @@ html {
 
 /* Booking Info Section Styles */
 .booking-info {
-    padding: 80px 0;
-    background: white;
+    padding: 60px 0;
+    background: transparent;
 }
 
 .booking-info h2 {
@@ -721,3 +720,11 @@ html {
         margin: 0 15px;  /* Add margin to keep buttons away from edges */
     }
 } 
+
+/* Utility background classes */
+.grey-bg {
+    background: #f4f4f4 !important;
+}
+.white-bg {
+    background: #fff !important;
+}
