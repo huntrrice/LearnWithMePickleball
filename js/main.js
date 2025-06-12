@@ -274,4 +274,100 @@ function copyCode() {
     setTimeout(() => {
         message.innerText = 'Click the code to copy';
     }, 2000);
-} 
+}
+
+// Testimonial slider logic
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.testimonial-card-stack .testimonial-card');
+    const leftBtn = document.querySelector('.testimonial-arrow.left');
+    const rightBtn = document.querySelector('.testimonial-arrow.right');
+    let current = 0;
+    function showCard(idx) {
+        cards.forEach((card, i) => {
+            card.style.display = (i === idx) ? '' : 'none';
+        });
+    }
+    function prevCard() {
+        current = (current - 1 + cards.length) % cards.length;
+        showCard(current);
+    }
+    function nextCard() {
+        current = (current + 1) % cards.length;
+        showCard(current);
+    }
+    if (leftBtn && rightBtn && cards.length) {
+        leftBtn.addEventListener('click', prevCard);
+        rightBtn.addEventListener('click', nextCard);
+        showCard(current);
+        // Keyboard accessibility
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') prevCard();
+            if (e.key === 'ArrowRight') nextCard();
+        });
+    }
+});
+
+// New Testimonial Carousel Logic
+function initTestimonialCarousel() {
+    const cards = document.querySelectorAll('.testimonial-carousel .testimonial-card');
+    const dots = document.querySelectorAll('.testimonial-dot');
+    let current = 0;
+    function showCard(idx) {
+        cards.forEach((card, i) => {
+            card.style.display = (i === idx) ? '' : 'none';
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === idx);
+        });
+        current = idx;
+    }
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => showCard(idx));
+    });
+    showCard(0);
+}
+document.addEventListener('DOMContentLoaded', initTestimonialCarousel); 
+
+// Testimonial Multi-Grid Logic
+function initTestimonialMultiGrid() {
+    const cards = Array.from(document.querySelectorAll('.testimonial-multigrid .testimonial-card'));
+    const leftBtn = document.querySelector('.testimonial-multigrid-arrow.left');
+    const rightBtn = document.querySelector('.testimonial-multigrid-arrow.right');
+    let visibleCount = 3;
+    function updateVisibleCount() {
+        if (window.innerWidth <= 600) visibleCount = 1;
+        else if (window.innerWidth <= 900) visibleCount = 2;
+        else visibleCount = 3;
+    }
+    let start = 0;
+    function showCards() {
+        cards.forEach((card, i) => {
+            card.classList.toggle('hidden', i < start || i >= start + visibleCount);
+        });
+    }
+    function prev() {
+        start -= visibleCount;
+        if (start < 0) start = Math.max(0, cards.length - visibleCount);
+        showCards();
+    }
+    function next() {
+        start += visibleCount;
+        if (start >= cards.length) start = 0;
+        showCards();
+    }
+    function onResize() {
+        const oldCount = visibleCount;
+        updateVisibleCount();
+        if (visibleCount !== oldCount) {
+            start = 0;
+        }
+        showCards();
+    }
+    leftBtn.addEventListener('click', prev);
+    rightBtn.addEventListener('click', next);
+    window.addEventListener('resize', onResize);
+    updateVisibleCount();
+    start = 0;
+    showCards();
+}
+document.addEventListener('DOMContentLoaded', initTestimonialMultiGrid); 
