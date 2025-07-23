@@ -1226,3 +1226,51 @@ section[id], footer[id] {
         padding-top: 46px;
     }
 }
+
+/* Responsive button for booking and back links */
+.responsive-btn {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    min-width: 180px;
+    margin: 0 auto;
+    padding: 1.1em 0.5em;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #008CFF 0%, #0074D4 100%);
+    color: #fff;
+    text-decoration: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+.responsive-btn:hover, .responsive-btn:focus {
+    box-shadow: 0 4px 18px rgba(0,140,255,0.13);
+    transform: translateY(-2px) scale(1.02);
+    color: #fff;
+    text-decoration: none;
+}
+@media (max-width: 500px) {
+    .responsive-btn {
+        font-size: 1rem;
+        min-width: 0;
+        padding: 1em 0.2em;
+    }
+}
+
+.social-link.tiktok {
+    background: linear-gradient(135deg, #181818 0%, #23272F 60%, #1A2327 80%, #1A1A1A 100%),
+                linear-gradient(45deg, rgba(37,244,238,0.18) 0%, rgba(254,44,85,0.18) 100%);
+    background-blend-mode: lighten;
+    color: #fff;
+    border: none;
+}
+.social-link.tiktok:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    color: #fff;
+}
+.social-link.tiktok i {
+    font-size: 1.5rem;
+}
